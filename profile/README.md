@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/jadda-helpifyr.webp" alt="Jadda Helpifyr" width="200"></p>
+
 # Helpifyr
 
 **An AI-agent operating stack for small and medium businesses** — governed agents that do real business work (finance, HR, operations) on top of a proven open-source ERP core, with verifiable evidence for every action.
@@ -10,27 +12,44 @@
 - **Governed autonomy.** Agents work behind human-in-the-loop gates for anything irreversible (payments, filings, customer-visible output). A three-account review model with server-side branch protection makes the gates mechanical, not conventional.
 - **Layered knowledge, not one big prompt.** Role knowledge, company knowledge, live business data and per-task context are separate, permissioned layers — served to agents through a read-only gateway with provenance on every fact.
 
-## Repository map
+## Contribution status (DCO 1.1)
 
-| Area | Repositories | Role |
+Contributions use the [Developer Certificate of Origin, version 1.1](https://developercertificate.org/) — every commit needs a `Signed-off-by` trailer (`git commit -s`). Inbound equals outbound under `AGPL-3.0-only`; no general CLA, no copyright assignment, no relicensing right (decision `JaddaHelpifyr/helpifyr-fabric#1542`, ANYFER GmbH, 2026-07-26).
+
+| Repository | Rollout state |
+|---|---|
+| `jhf-weaver` | `ready_pre_live` |
+| `jhf-docs` | `ready_pre_live` |
+| `helpifyr-fabric` | `not_applicable` |
+
+A repository not listed above has not yet been evaluated for public contribution intake.
+
+## Repositories with a public posture
+
+The repositories below are the only ones with a `public_candidate` or `public_contract_only` publication scope today; everything else remains Gitea-internal architecture detail, covered in the [Developer Hub repository map](https://docs.helpifyr.com/developers/repository-map).
+
+| Repository | Class | Why public |
 |---|---|---|
-| **Governance & truth** | `helpifyr-fabric` | Contracts, gates, event modeling — the control plane every other repo answers to |
-| **Agent runtime** | `jhf-warp`, `jhf-openclaw-env` | Agent supervision, goal envelopes, runtime environment materialization |
-| **Identity & secrets** | `jhf-heddle`, `jhf-keystore` | OIDC identity, session attestation, secret references |
-| **Knowledge & memory** | `jhf-bobbin`, `jhf-loom`, `jhf-reed` | Context graph (Graphiti/Neo4j + Mem0), document evidence, read-only context gateway |
-| **Business core** | `jhf-spindle` | ERPNext/CRM bridge — invoices, approvals, settlement runs with fail-closed guards |
-| **Orchestration** | `jhf-pattern`, `jhf-shuttle`, `jhf-weaver` | Work materialization, transport, release & distribution |
-| **Surfaces** | `jhf-lantern`, `jhf-docs`, `jhf-web` | Operator UI (Plan Studio), developer hub, website |
-| **Quality & safety** | `jhf-swatch`, `jhf-selvage`, `jhf-dobby`, `jhf-beam`, `jhf-weft` | Test programs, compliance review, trajectory evaluation, artifact certification |
-
-Additional `helpifyr-boost-*` repositories package domain-specific agent capabilities ("Boosts") that plug into the core.
+| `helpifyr-boost-advice-followup` | `boost` | generic_agpl_product_candidate |
+| `helpifyr-boost-company-pulse` | `boost` | reference_boost_w0_bootstrap |
+| `helpifyr-fabric` | `core` | proprietary_ip |
+| `insurance-broker-core` | `application` | generic_agpl_product_candidate |
+| `jhf-docs` | `documentation` | public_docs |
+| `jhf-weaver` | `integration` | golden_path_pilot |
 
 ## Where to start
 
-1. **[Developer Hub](https://docs.helpifyr.com/developers/)** — repository map, roadmap, glossary, golden path.
+1. **[Developer Hub](https://docs.helpifyr.com/developers/)** — full repository map, roadmap, glossary, golden path.
 2. **Golden Path** — `jhf-weaver` ships a devcontainer-based local lab (`docs.helpifyr.com/developers/golden-path-weaver`).
 3. **Website** — [helpifyr.com](https://helpifyr.com).
 
 ---
 
 *Development happens on a self-hosted Gitea (source of truth); these GitHub repositories are the distribution mirror, refreshed nightly. Issues and PRs here are not yet monitored — the public contribution path opens with the open-source release.*
+
+## License
+
+- License: AGPLv3
+- Project: https://helpifyr.com
+
+<sub>Generated projection. generated_from: `repository_landscape_v1@2026-09-23T21:13:04.694295+00:00`, `public_architecture_contract_v1@2026-09-23T21:13:04.694295+00:00`, `dco_contribution_policy_v1@1.1.0`. Source: helpifyr-fabric `scripts/build_org_profile.py` (helpifyr-fabric#1903). If this drifts from the live page, report a documentation issue.</sub>
